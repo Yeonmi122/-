@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form method="post" action="test1.html"> <!--향후 PHP를 총해 전달 받은 값 출력 예제 수-->
+            <fieldset>
+                <legend>개인정보</legend>
+                <P>
+                    <label for = "username">
+                        이름 : 
+                    </label>
+                    <input type="text" id = "username">
+                </P>
+                <p>
+                    <label for = "userphone">
+                        전화번호 :
+                    </label>
+                    <input type="text" id= "userphone">
+            </fieldset>
+            <fieldset>
+                <legend>로그인 정보</legend>
+                <P>
+                    <label for = "userid">
+                        ID : 
+                    </label>
+                    <input type="text" id = "userid">
+                </P>
+                <p>
+                    <label for = "userpw">
+                        P/W :
+                    </label>
+                    <input type="password" maxlength="7" id= "userpw">
+            </fieldset>
+            <fieldset>
+                <legend>참가 유형 선택</legend>
+                <p><input type="radio" id = "free" name="pay" value="free" cheaked>
+                <label for = "free">무료(교내 참가자)</label></p>
+                <p><input type="radio" id = "paid" name="pay" value="paid">
+                    <label for = "paid">유료(교외 참가자)</label>
+                </p> 
+            </fieldset>
+            <fieldset>
+                <legend>관심 분야 선택</legend>
+                <p><input type = "checkbox" id = "html5" value="html5">
+                    <label for = "html5">HTML5 시맨틱</label></p>
+                <p><input type = "checkbox" id = "ml" value="ml">
+                    <label for = "ml">머신러닝</label></p>
+                <p><input type = "checkbox" id = "dl" value="dl">
+                    <label for = "dl">딥러닝</label></p>
+                <p><input type = "checkbox" id = "python" value="python">
+                    <label for = "python">파이썬</label></p>
+                <p><input type = "checkbox" id = "Java" value="Java">
+                    <label for = "Java">Java</label></p>
+                <p><input type = "checkbox" id = "AI" value="AI">
+                    <label for = "AI">AI</label></p>
+                <p><input type = "checkbox" id = "RPA" value="RPA">
+                    <label for = "RPA">RPA</label></p> <!--교재 121p-->
+            </fieldset>
+            <fieldset>
+                <label for="photo"><th>프로필 사진</label>
+                <input type="file" name="photo" id = "photo">
+            </fieldset>
+            <fieldset>
+                <legend>마무리</legend>
+                <input type="submit" value="제출하기">
+                <input type="reset" value="다시쓰기">
+                <input type="button" value="사진 띄우기" onclick = "open_img()">
+                <input type="image" src="/test/botton.png" style="width: 100px;">
+            </fieldset>
+        </form>
+        <div style="width: 500px; height: 300px;">
+            <img src="#" width="100%" id="img_1">
+        </div>
+        <div>
+            <p><label>주문 개수</label>
+                <input type="range" id="no" min="1" max="100" step="1" value="1">
+                <labe>사이즈</labe>
+                <input type="number" id="size" min="85" max="120" step="5" value="90">
+            </p>
+        </div>
+        <div>
+            <label>여행날짜</label>
+            <input type="date">
+        </div>
+        <script>
+            function open_img(){
+                document.getElementById("img_1").src="/index/img_1.jpg";
+            }
+        </script>
+    </body>
+</html>
