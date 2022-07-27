@@ -1,0 +1,26 @@
+body {
+    min-height: 100vh;
+    
+    background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#1d466c));
+    background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+    background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
+    background: -o-linear-gradient(bottom left, #92b5db 0%, #f5cd79 100%);
+    background: linear-gradient(to top right, #fa983a 0%, #f5cd79 100%);
+    }
+.text-center{
+    margin-top: 10%;
+}
+.form-signin{
+    max-width: 330px;
+}
+.w-100{
+    color: #e15f41;
+}
+.btn-primary{
+    background-color: #e15f41!important;
+    border-color: #e15f41!important;
+}
+a {
+    text-decoration: none !important;
+    color: white !important;
+  }

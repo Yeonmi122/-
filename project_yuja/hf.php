@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>유트브 자막 제작 구인 사이트</title>
-    <link rel = "stylesheet" href = "index.css">
+    <link rel = "stylesheet" href = "main.css">
     <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&family=Kiwi+Maru:wght@300&family=Kosugi+Maru&display=swap" rel="stylesheet">
 </head>
@@ -20,25 +20,11 @@
             </div>
     
             <div class="col-md-3 text-end">
-              <button onclick = "location.href = login.php" type="button" class="btn btn-outline-primary me-2" id="login">Login</button>
-              <button onclick = "location.href = sign_tp.php" type="button" class="btn btn-primary" id="sign-up">Sign-up</button>
+              <button type="button" class="btn btn-outline-primary me-2" id="login">Login</button>
+              <button type="button" class="btn btn-primary" id="sign-up">Sign-up</button>
             </div>
         </header>
-    </div>
-  <main>
-    <div class = "main_img">
-        <img src = "./img/main_5.png" width = 80% height="380px">
-    </div>
-    <div class="row mb-3 text-center">
-      <div class="col-6 themed-grid-col" id = "ko">한국어 자막</div>
-      <div class="col-6 themed-grid-col" id = "gl">외국어 자막</div>
-    </div>
-    <div class="row mb-3 text-center">
-      <div class="col-6 themed-grid-col">자유게시판</div>
-      <div class="col-6 themed-grid-col">공지사항</div>
-    </div>
-  </main>
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
 
     <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
@@ -51,5 +37,4 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">yooyeonmi122@gmail.com</a></li>
     </div>
   </footer>
-</body>
 </html>
