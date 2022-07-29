@@ -46,31 +46,3 @@ header{
     background-color: #f5cd79;
     width: 100%;
 }
-.col-6{
-    padding-top: 1.5rem;
-    color: #e15f41;
-    background-color: #f5cd79;
-    border: solid #ffffff 1px;
-    height: 5rem;
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: 1.5rem;
-}
-.col-6:hover{
-    color: white;
-    background-color: #e15f41;
-    border: solid #ffffff 1px;
-}
-.row{
-    max-width: 95.92rem !important;
-}
-.nav-item{
-    font-size: 0.8rem;
-}
-footer{
-    background: #f5cd79;
-    margin-top: 5rem!important;
-    margin-bottom: 0!important;
-}
-.my-4{
-    margin-top: 5rem!important;
-}

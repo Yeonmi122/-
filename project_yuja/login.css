@@ -24,3 +24,13 @@ a {
     text-decoration: none !important;
     color: white !important;
   }
+.btn-danger{
+    width: 49%!important;
+}
+.btn-success{
+    width: 49%!important;
+}
+
+.btn-mag{
+    margin-bottom: 10%!important;
+}

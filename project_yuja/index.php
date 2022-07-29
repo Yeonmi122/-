@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if (isset($_SESSION["userid"])) 
+        $userid = $_SESSION["userid"];
+    else 
+        $userid = "";
+?>	
+        </div> <!-- top -->
+    </div> <!-- header -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +27,22 @@
             <div class = "main_title">
                 <h3>유트브 자막 제작 구인 사이트</h3>
             </div>
-    
+            <?php
+    if(!$userid) {
+?>                
             <div class="col-md-3 text-end">
-              <button onclick = "location.href = login.php" type="button" class="btn btn-outline-primary me-2" id="login">Login</button>
-              <button onclick = "location.href = sign_tp.php" type="button" class="btn btn-primary" id="sign-up">Sign-up</button>
+              <button onclick = "location.href = 'login.php'" type="button" class="btn btn-outline-primary me-2" id="login">Login</button>
+              <button onclick = "location.href = 'sign_up.php'" type="button" class="btn btn-primary" id="sign-up">Sign-up</button>
             </div>
+<?php
+    } else {
+?>
+            <div class="col-md-3 text-end">
+            <a href = "profile.php"><img src="./img/profile.jpg" alt="mdo" width="32" height="32" class="rounded-circle" ></a>
+            <button onclick = "location.href = 'logout.php'" type="button" class="btn btn-primary" id="sign-up">Logout</button>
+<?php
+    }
+?>
         </header>
     </div>
   <main>
@@ -34,16 +54,16 @@
       <div class="col-6 themed-grid-col" id = "gl">외국어 자막</div>
     </div>
     <div class="row mb-3 text-center">
-      <div class="col-6 themed-grid-col">자유게시판</div>
-      <div class="col-6 themed-grid-col">공지사항</div>
+      <div class="col-6 themed-grid-col" button onclick = "location.href = 'f_board.php'">자유게시판</div></button>
+      <div class="col-6 themed-grid-col" button onclick = "location.href = 'f_board.php'">공지사항</div></button>
     </div>
   </main>
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
-
+<!-- 
     <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-    </a>
+    </a> -->
 
     <div class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">(주)YOUJA</a></li>
