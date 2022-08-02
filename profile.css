@@ -1,0 +1,32 @@
+
+.infomaion{
+    display: inline-block;
+    text-align: center;
+}
+.input-form {
+    max-width: 680px;
+    
+    margin-top: 80px;
+    padding: 32px;
+    
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+}
+.mb-4{
+    background-color: #f5cd79!important;
+}
+#sign{
+    background-color: #fa983a!important;
+    border: solid #fa983a 1px;
+}
+    
+footer{
+    background: #f5cd79;
+    margin-top: 5rem!important;
+}
+
