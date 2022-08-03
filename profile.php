@@ -38,7 +38,7 @@
     } else {
 ?>
             <div class="col-md-3 text-end">
-            <a href = "profile.php"><img src="./img/profile.jpg" alt="mdo" width="32" height="32" class="rounded-circle" ></a>
+            <a href = "profile_view.php"><img src="./img/profile.jpg" alt="mdo" width="32" height="32" class="rounded-circle" ></a>
             <button onclick = "location.href = 'logout.php'" type="button" class="btn btn-primary" id="sign-up">Logout</button>
 <?php
     }
@@ -71,11 +71,16 @@
     </form>
     </div>
     <body> -->
-  <div class="container">
+
+<!-- <script>
+  function check_input(){
+    document.board.submit();
+  }
+  <div class="container"> -->
     <!-- <div class="input-form-backgroud row"> -->
       <!-- <div class="input-form col-md-12 mx-auto"> -->
         <h4 class="mb-3">마이페이지</h4>
-        <form class="validation-form" name = "infomation" method="post" action="profile_view.php">
+        <form class="validation-form" name = "infomation" method="post" action="profile_insert.php">
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="name">이름</label>
@@ -101,7 +106,7 @@
           </div>
           <div class="mb-3">
             <label for="text">참여 이력 여부</label>
-            <input type="text" class="form-control" name = "part" id="part" placeholder="O/X" required>
+            <input type="text" class="form-control" name = "part" id="part" placeholder="횟수" required>
             <div class="invalid-feedback">
               참여 이력을 입력해주세요.
             </div>
@@ -112,12 +117,12 @@
             <input type="text" class="form-control" name = "info" id="info" placeholder="상세정보를 입력해주세요.">
           </div>
           <div class="mb-4"></div>
-          <button class="btn btn-primary btn-lg btn-block" type="submit" id = sign onclick="location.href = 'profile_view.php'">등록하기</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="check_input()">등록하기</button>
         </form>
       </div>
     </div>
-    <div class = ".container-fluid">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center">
+    <!-- <div class = ".container-fluid"> -->
+  <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center">
     <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
 
     <div class="nav col-md-4 justify-content-end">
@@ -125,9 +130,42 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">고객센터: 1544-1234(평일 오전10:00~오후 16:00)</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">yooyeonmi122@gmail.com</a></li>
     </div>
-  </footer>
+  </footer> -->
 </div>
 </body>
 </html>
+<?php
+if(isset($_GET["num"]))
+        $num=$_GET["num"];
+else
+    $num = "";
+  $id = $_GET["name"]
 
+  $langue = $_POST["langue"];
+  $url = $_POST["url"];
+  $part = $_POST["part"];
+  $info = $_POST["info"];
 
+  $con = mysqli_connect("localhost","yeonmi","1234","youja");
+  $sql = "select*from mypage where num =$num";
+  $sql = "update mypage set langue ='$langue',url = '$url', part='$part','info = '$info'";
+  $sql.="where id = '$id'";
+  mysqli_query($con,$sql);
+
+  mysql_close($con);
+
+  echo"
+  <script>
+    location.href = 'profile_view'";
+?>
+<?php
+// // $row = mysqli_fetch_assoc($result);
+// // $name = $row["name"];
+// // $langue = $row["langue"];
+// // $url = $row["url"];
+// // $part = $row["part"];
+// // $info = $row["info"];
+// // $info = str_replace(",","&nbsp;",$info);
+// // $info = str_replace("\n","<br>",$info);
+// ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/PROJECT_YOUJA/f.php"?>

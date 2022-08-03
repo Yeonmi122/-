@@ -1,3 +1,4 @@
+<!-- header -->
 <?php
     session_start();
     if (isset($_SESSION["userid"])) 
@@ -45,11 +46,27 @@
 ?>
         </header>
     </div>
+<!-- header_end -->
+
+<!--글 내용 보기-->
 <?php
-    $langue = $_POST["langue"];
-    $youtube = $_POST["youtube"];
-    $part = $_POST["part"];
-    $info = $_POST["info"];
+    if(isset($_GET["num"]))
+            $num=$_GET["num"];
+    else
+        $num = "";
+
+    $con = mysqli_connect("localhost","yeonmi","1234","youja");
+    $sql = "select*from mypage where num =$num";
+    $result=mysqli_query($con,$sql);
+
+    $row = mysqli_fetch_assoc($result);
+    $name = $row["name"];
+    $langue = $row["langue"];
+    $url = $row["url"];
+    $part = $row["part"];
+    $info = $row["info"];
+    $info = str_replace(",","&nbsp;",$info);
+    $info = str_replace("\n","<br>",$info);
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +80,22 @@
 </head>
 <body>
     <h2>마이페이지</h2>
-    언어 시험 성적: <?php echo $langue;?><br>
-    유튜브 채널: <?php echo $youtube;?><br>
-    참여 이력: <?php echo $part;?><br>
-    상세 정보: <?php echo $info;?><br>
-</body>
+    <ul class = "profile">
+        <li class = "col1">
+            <span class = "row1"><?=$name?></span>
+            <span class = "row2"><b>언어 시험 성적 : <b><?=$langue?></span>
+            <span class = "row3"><b>유튜브 채널 : <b><?=$url?></span>
+            <span class = "row4"><b>참여 여부 : <b><?=$part?></span>
+            <span class = "row5"><b>상세 정보 : <b><?=$info?></span>
+        </li>
+        <li class = "col2">
+            <?=$info?>
+        </li>
+    </ul>
+        <ul class = "botton ">
+            <li><botton onclick = "location.href ='profile.php'">수정하기</button><li>
+        </ul>
+    </body>
 </html>
+
 <?php include $_SERVER['DOCUMENT_ROOT']."/PROJECT_YOUJA/f.php"?>
