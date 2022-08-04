@@ -1,22 +1,4 @@
 <?php
-    if(isset($_GET["num"]))
-        $num = $_GET["num"];
-    else
-        $num = "";
-
-    $con = mysqli_connect("localhost","yeonmi","1234","youja");
-    $sql = "select*from mypage where num =$num";
-    $result=mysqli_query($con,$sql);
-
-    $row = mysqli_fetch_assoc($result);
-    $name = $row["name"];
-    $lang = $row["lang"];
-    $url = $row["url"];
-    $info = $row["info"];
-    $info = str_replace("","$nbsp;",$info);
-    $info = str_replace("\n","<br>",$info);
-?>
-    <?php
     session_start();
     if (isset($_SESSION["userid"])) 
         $userid = $_SESSION["userid"];
@@ -25,7 +7,6 @@
 ?>	
         </div> <!-- top -->
     </div> <!-- header -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,14 +45,32 @@
     }
 ?>
         </header>
+<?php
+    if(isset($_GET["num"]))
+        $num = $_GET["num"];
+    else
+        $num = "";
 
-    <h2>마이페이지</h2>
+    $con = mysqli_connect("localhost","yeonmi","1234","youja");
+    $sql = "select*from mypage where num =$num";
+    $result=mysqli_query($con,$sql);
+
+    $row = mysqli_fetch_assoc($result);
+    $name = $row["name"];
+    $langue = $row["lang"];
+    $url = $row["url"];
+    $info = $row["info"];
+    $info = str_replace("","$nbsp;",$info);
+    $info = str_replace("\n","<br>",$info);
+?>
+
+        <h2>마이페이지</h2>
     <ul class = "mypage_view">
         <li class = "col1">
-            <span class = "row1"><?=$name?></span>
-            <span class = "row2"><b>언어시험성적: </b><?=$lang?></span>
-            <span class = "row3"><b>유튜브 채널: </b><?=$url?></span>
-            <span class = "row2"><b>상세 정보(경력): </b><?=$info?></span>
+            <span class = "name"><?=$name?></span>
+            <span class = "lang"><b>언어시험성적: </b><?=$lang?></span>
+            <span class = "url"><b>유튜브 채널: </b><?=$url?></span>
+            <span class = "info"><b>상세 정보(경력): </b><?=$info?></span>
         </li>
     </ul>
     <ul class = "buttons">
@@ -80,3 +79,9 @@
     </ul>
 </body>
 </html>
+
+
+
+
+
+    
