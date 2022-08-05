@@ -1,0 +1,15 @@
+footer{
+    background: #f5cd79;
+    margin-top: 5rem!important;
+    max-width: auto;
+}
+.my-4{
+    margin-top: 5rem!important;
+}
+#wrapper{
+    height : 100%;
+  }
+  footer{
+    position : relative;
+    transform : translateY(170%);
+  }
