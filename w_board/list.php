@@ -6,6 +6,7 @@
         $userid = "";
     }
         
+
     // if (isset($_SESSION["username"])) 
     //     $username = $_SESSION["username"];
     // else 
@@ -20,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>유트브 자막 제작 구인 사이트</title>
-    <link rel = "stylesheet" href = "./index.css">
+    <link rel = "stylesheet" href = "/p2/yym/project_youja/w_board/index.css">
     <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&family=Kiwi+Maru:wght@300&family=Kosugi+Maru&display=swap" rel="stylesheet">
 </head>
@@ -28,7 +29,7 @@
     <div class=".container-fluid">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <div class = "logo">
-                <a href="/project_youja/index.php"><img src = "logo_2.png" width = "60%"></a>
+                <a href="/p2/yym/project_youja/index.php"><img src = "logo_2.png" width = "60%"></a>
             </div>
             <div class = "main_title">
                 <h3>유트브 자막 제작 구인 사이트</h3>
@@ -39,15 +40,15 @@
     if(!$userid) {
 ?>                
             <div class="col-md-3 text-end">
-              <button onclick = "location.href = '/project_youja/login.php'" type="button" class="btn btn-outline-primary me-2" id="login">Login</button>
-              <button onclick = "location.href = '/project_youja/sign_up.php'" type="button" class="btn btn-primary" id="sign-up">Sign-up</button>
+              <button onclick = "location.href = '/p2/yym/project_youja/login.php'" type="button" class="btn btn-outline-primary me-2" id="login">Login</button>
+              <button onclick = "location.href = '/p2/yym/project_youja/sign_up.php'" type="button" class="btn btn-primary" id="sign-up">Sign-up</button>
             </div>
 <?php
     } else {
 ?>
             <div class="col-md-3 text-end">
-            <a href = "profile_1.php"><img src="profile.jpg" alt="mdo" width="32" height="32" class="rounded-circle" ></a>
-            <button onclick = "location.href = '/project_youja/logout.php'" type="button" class="btn btn-primary" id="sign-up">Logout</button>
+            <a href = ""><img src="profile.jpg" alt="mdo" width="32" height="32" class="rounded-circle" ></a>
+            <button onclick = "location.href = '/p2/yym/project_youja/logout.php'" type="button" class="btn btn-primary" id="sign-up">Logout</button>
 <?php
     }
 ?>
@@ -66,6 +67,10 @@
 <link rel="stylesheet"  href="style.css">
 </head>
 <body> 
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  id = "search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
 	<h2>외국어 자막 > 목록보기</h2>
 	<ul class="board_list">
 		<li>
@@ -76,8 +81,9 @@
 			<span class="col5">등록일</span>
 		</li>
 <?php
-	$con = mysqli_connect("localhost", "yeonmi", "1234", "youja");		// DB 연결
-	$sql = "select * from w_board order by num desc";		// 일련번호 내림차순 전체 레코드 검색
+	$con = mysqli_connect("localhost", "w1004mesmg", "sunmoons1s2s3!", "w1004mesmg");		// DB 연결
+
+	$sql = "select * from ym_w_board order by num desc";		// 일련번호 내림차순 전체 레코드 검색
 	$result = mysqli_query($con, $sql);			// SQL 명령 실행
 	$total_record = mysqli_num_rows($result); // 전체 글 수
 
@@ -95,21 +101,23 @@
 		<li>
 			<span class="col1"><?=$number?></span>		
 			<span class = "col2"><?=$channel?></span>
-			<span class="col3"><a href="view.php?num=<?=$num?>"><?=$subject?></a></span>
+			<span class="col3"><a href="/p2/yym/project_youja/w_board/view.php?num=<?=$num?>"><?=$subject?></a></span>
 			<span class="col4"><?=$name?></span>
 			<span class="col5"><?=$regist_day?></span>
 
 		</li>	
 <?php
    	   $number--;
+
    	}
    	mysqli_close($con);
+
 ?>
 	    </ul>
 		<ul class="buttons">
-			<li><button onclick="location.href='list.php'">목록</button></li>
-			<li><button onclick="location.href='form.php'">글쓰기</button></li>
+			<li><button onclick="location.href='/p2/yym/project_youja/w_board/list.php'">목록</button></li>
+			<li><button onclick="location.href='/p2/yym/project_youja/w_board/form.php'">글쓰기</button></li>
 		</ul>		
 </body>
 </html>
-<?php include $_SERVER['DOCUMENT_ROOT']."/PROJECT_YOUJA/f.php"?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/p2/yym/project_youja/f.php"?>

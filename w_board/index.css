@@ -75,3 +75,7 @@ footer{
 .my-4{
     margin-top: 5rem!important;
 }
+#search{
+    width: 20%!important;
+    margin-left: 70%;
+}

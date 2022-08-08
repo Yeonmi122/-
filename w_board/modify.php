@@ -12,8 +12,8 @@
 	$content = htmlspecialchars($content, ENT_QUOTES);	// 내용 HTML 특수문자 변환 
 	$regist_day = date("Y-m-d (H:i)");  // UTC 기준 현재의 '년-월-일 (시:분)'
 
-	$con = mysqli_connect("localhost", "yeonmi", "1234", "youja");	// DB 연결
-	$sql = "update w_board set name='$name', pass='$pass', channel = '$channel', subject='$subject', ";	// 수정 명령
+	$con = mysqli_connect("localhost", "w1004mesmg", "sunmoons1s2s3!", "w1004mesmg");	// DB 연결
+	$sql = "update ym_w_board set name='$name', pass='$pass', channel = '$channel', subject='$subject', ";	// 수정 명령
 	$sql .= "content='$content', regist_day='$regist_day' where num=$num";
 	mysqli_query($con, $sql);  // SQL 명령 실행
 
@@ -21,8 +21,8 @@
 
 	echo "
 	   <script>
-	    location.href = 'list.php';
+	    location.href = '/p2/yym/project_youja/w_board/list.php';
 	   </script>
 	";
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT']."./PROJECT_YOUJA/f.php"?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/p2/yym/project_youja/f.php"?>

@@ -9,9 +9,9 @@
 	$content = htmlspecialchars($content, ENT_QUOTES);	// 내용 HTML 특수문자 변환 
 	$regist_day = date("Y-m-d");  // UTC 기준 현재의 '년-월-일 (시:분)'
 
-	$con = mysqli_connect("localhost", "yeonmi", "1234", "youja");	// DB 연결
+	$con = mysqli_connect("localhost", "w1004mesmg", "sunmoons1s2s3!", "w1004mesmg");	// DB 연결
 
-	$sql = "insert into w_board (name, pass, channel, subject, content, regist_day) ";	// 레코드 삽입 명령
+	$sql = "insert into ym_w_board (name, pass, channel, subject, content, regist_day) ";	// 레코드 삽입 명령
 	$sql .= "values('$name', '$pass', '$channel', '$subject', '$content', '$regist_day')";
 
 	mysqli_query($con, $sql);  // $sql에 저장된 명령 실행
@@ -20,7 +20,7 @@
 
 	// 목록 페이지로 이동
 	echo "<script>
-	    location.href = 'list.php';
+	    location.href = '/p2/yym/project_youja/w_board/list.php';
 	   </script>";
 ?>
 

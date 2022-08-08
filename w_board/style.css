@@ -35,3 +35,6 @@ h2 { margin-top: 20px;	padding: 10px; border-bottom: solid 3px black; }
 .board_view .row1 {	padding: 15px; border-bottom: solid 1px #aaaaaa; }
 .board_view .row2 {	padding: 15px 15px 80px 15px; border-bottom: solid 1px #cccccc; }
 .board_view .col2 { float: right; }
+.form-control{
+    width: 20%;
+}
