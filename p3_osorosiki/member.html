@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="member.css">
+    <script>
+      function check_input(){
+        var id = document.getElementById('id');
+        if(!id){
+          alert("아이디를 입력하세요!");
+          document.login.email.focus();
+          return;
+        }
+        if(!document.login.pㅈ.value){
+          alert("비밀번호를 입력하세요!");
+          document.login.pass.focus();
+          return;
+        }
+        if(!document.login.pass.value){
+          alert("비밀번호를 입력하세요!");
+          document.login.pass.focus();
+          return;
+        }
+        if(!document.login.pass.value){
+          alert("이름을 입력하세요!");
+          document.login.pass.focus();
+          return;
+        }
+        if(!document.login.pass.value){
+          alert("이메일을 입력하세요!");
+          document.login.pass.focus();
+          return;
+        }
+        if(!document.login.pass.value){
+          alert("닉네임을 입력하세요!");
+          document.login.pass.focus();
+          return;
+        }
+        if(!document.login.pass.value){
+          alert("전화번호를 입력하세요!");
+          document.login.pass.focus();
+          return;
+        }
+        document.login.submit();
+        }
+    </script>
+</head>
+<body>
+  <div class="form_wrap">
+    <form action="doJoin" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">
+      <h2 class="form_title">회원가입</h2>
+      <div class="form_wrap"></div>
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id">
+        <button type="button">아이디 중복확인</button> 
+        <br>
+        <span class="err_id">* 4~12글자까지만 입력 가능합니다.</span>
+      </div>
+      <div class="form_wrap">
+        <label for="pw">비밀번호</label>
+        <input type="text" name="pw" id="pw"> 
+        <br>
+        <span class="err_pwd">* 4~12글자까지만 입력 가능합니다.</span>
+      </div>
+      <div class="form_wrap">
+        <label for="repw">비밀번호 확인</label>
+        <input type="text" name="repw" id="repw">
+        <br>
+        <span class="err_repwd"></span>
+      </div>
+      <div class="form_wrap">
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <span class="err_name"></span>
+      </div>
+      <div class="form_wrap">
+        <label for="email">이메일</label>
+        <input type="text" name="email" id="email"> @
+        <input type="text" name="email_dns" id="email_dns">
+        <select name="email_sel" id="email_sel">
+          <option value="">직접 입력</option>
+          <option value="naver.com">NAVER</option>
+          <option value="hanmail.net">DAUM</option>
+          <option value="gmail.com">GOOGLE</option>
+        </select>
+      </div>
+      <div class="form_wrap">
+        <label for="nickname">닉네임</label>
+        <input type="text" name="nickname" id="nickname">
+        <br>
+        <span class="err_name"></span>
+      </div>
+      <div class="form_wrap">
+        <label for="cellphoneNo">전화번호</label>
+        <input type="text" name="cellphoneNo" id="cellphoneNo">
+        <br>
+        <span class="err_mobile">* '-'없이 숫자만 입력</span>
+      </div>
+        <input type="submit" class="btn" value="J O I N"/>
+  </form>
+  <script src="join.js" type="text/javascript"></script>
+  </div>
+
+</body>
+</html>
+
+<!-- <div class="form_wrap">
+    <form action="doJoin" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">                                                                    
+        <h2 class="form_title">회원가입</h2>
+        <div class="textForm">
+          <input name="loginId" type="text" class="id" placeholder="아이디"  id = "id">
+          </input>
+        </div>
+        <div class="textForm">
+          <input name="loginPw" type="password" class="pw" placeholder="비밀번호" id = "pw">
+        </div>
+          <div class="textForm">
+          <input name="loginPwConfirm" type="password" class="pw" placeholder="비밀번호 확인" id = "pw">
+        </div>
+        <div class="textForm">
+          <input name="name" type="password" class="name" placeholder="이름" id = "name">
+        </div>
+          <div class="textForm">
+          <input name="email" type="text" class="email" placeholder="이메일" id = "email">
+        </div>
+        <div class="textForm">
+          <input name="nickname" type="text" class="nickname" placeholder="닉네임" id = "nickname">
+        </div>
+        <div class="textForm">
+          <input name="cellphoneNo" type="number" class="cellphoneNo" placeholder="전화번호" id = "tel">
+        </div>
+        <input type="submit" class="btn" value="J O I N"/>
+      </form>
+</div>
+</body> -->
+
+
+
+
