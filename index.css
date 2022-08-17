@@ -1,0 +1,51 @@
+body{
+    background-image: url('/p3/garam_team/img/body.jpg');
+    background-repeat: no-repeat;
+    width: 99vw;
+    background-size : cover;
+}
+.info{
+    /* margin-left: 10%;*/
+    margin-top: 8%; 
+}
+h3{
+    font-size: 1.3rem;
+    font-family: 'M PLUS 1', sans-serif;
+}
+.main_1{
+    display: flex;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.info_img{
+    margin-left: 18%;
+}
+#map_i{
+    margin-left: 12%;
+}
+.board_1{
+    display: flex;
+    margin-top: 10%;
+}
+.board1{
+    margin-left: 13%;
+}
+#free{
+    margin-left: 8%;
+}
+.info_w{
+    color: white;
+}
+#map{
+    margin-left: 10%;
+}
+.board_2{
+    display: flex;
+    margin-top: 2%;
+}
+.board3{
+    margin-left: 13%;
+}
+#story{
+    margin-left: 9%;
+}
